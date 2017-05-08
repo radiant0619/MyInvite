@@ -8,13 +8,57 @@
     tools:context="com.radiant.myinvite.HomeInviteActivity"
     tools:showIn="@layout/app_bar_home_invite">
 
+
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="On Wednesday 28th June 2017 at Sri Kalamega Perumal Temple in Thirumohur, in front of her friends and family, Mareeswari will be marrying Sakthivel."
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+    <LinearLayout
+        android:layout_width="374dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021"
+        tools:layout_editor_absoluteX="5dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nav_back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="278dp"
+
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="0dp"
+        android:background="@drawable/detail"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="83dp"
+        tools:layout_editor_absoluteX="-6dp">
+
+        <ImageView
+            android:id="@+id/imgdetail"
+            android:paddingTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wedname" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
