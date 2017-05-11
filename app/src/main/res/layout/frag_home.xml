@@ -1,0 +1,76 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.radiant.myinvite.fragments.OneFragment">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imgde"-->
+        <!--android:layout_width="375dp"-->
+        <!--android:layout_height="132dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:scaleType="center"-->
+        <!--android:src="@drawable/wedding_details_header"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/line1"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--tools:layout_editor_absoluteY="0dp"-->
+        <!--tools:layout_editor_absoluteX="-74dp" />-->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="381dp"
+        android:layout_height="119dp"
+        android:text="On Wednesday 28th June 2017 at Sri Kalamega Perumal Temple in Thirumohur, in front of her friends and family, Mareeswari will be marrying Sakthivel."
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="374dp"-->
+    <!--android:layout_height="75dp"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/line1"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintVertical_bias="0.021"-->
+    <!--tools:layout_editor_absoluteX="5dp">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@drawable/nav_back" />-->
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="373dp"
+        android:layout_height="287dp"
+
+        android:layout_marginBottom="-24dp"
+        android:layout_marginLeft="6dp"
+        android:background="@drawable/detail"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.043"
+        tools:layout_editor_absoluteX="3dp">
+
+        <ImageView
+            android:id="@+id/imgdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="234dp"
+            android:paddingTop="40dp"
+            android:src="@drawable/wedname" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

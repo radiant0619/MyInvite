@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,57 +8,33 @@
     tools:context="com.radiant.myinvite.HomeInviteActivity"
     tools:showIn="@layout/app_bar_home_invite">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="On Wednesday 28th June 2017 at Sri Kalamega Perumal Temple in Thirumohur, in front of her friends and family, Mareeswari will be marrying Sakthivel."
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <LinearLayout
-        android:layout_width="374dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/line1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021"
-        tools:layout_editor_absoluteX="5dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways" />
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:background="@drawable/nav_back"-->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/nav_back" />
-    </LinearLayout>
+            android:background="@android:color/white"
+            app:tabGravity="fill"
+            app:tabMode="scrollable" />
+    </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:id="@+id/line1"
-        android:layout_width="wrap_content"
-        android:layout_height="278dp"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="0dp"
-        android:background="@drawable/detail"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="83dp"
-        tools:layout_editor_absoluteX="-6dp">
 
-        <ImageView
-            android:id="@+id/imgdetail"
-            android:paddingTop="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wedname" />
-    </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -22,7 +22,6 @@ public class SplashActivity extends AppCompatActivity {
         Intent svc = new Intent(this, BackgroundSoundService.class);
         startService(svc);
         new Handler().postDelayed(new Runnable() {
-
             // Using handler with postDelayed called runnable run method
 
             @Override
