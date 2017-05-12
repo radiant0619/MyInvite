@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.radiant.myinvite.fragments.CoupleFragment;
@@ -43,22 +45,18 @@ public class HomeInviteActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_invite);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setOffscreenPageLimit(5);
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
+
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        tabLayout.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                Log.d("Test Focus", "tested");
-            }
-        });
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -74,10 +72,12 @@ public class HomeInviteActivity extends AppCompatActivity
                         imgView.setImageResource(R.drawable.m_abt_s);
                         break;
                     case 3:
+                        imgView.setImageResource(R.drawable.m_abt_s);
+                        break;
+                    case 4:
                         imgView.setImageResource(R.drawable.m_loc_s);
                         break;
                 }
-//                Toast.makeText(getApplicationContext(), String.valueOf(tab.getPosition()), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -94,6 +94,9 @@ public class HomeInviteActivity extends AppCompatActivity
                         imgView.setImageResource(R.drawable.m_abt);
                         break;
                     case 3:
+                        imgView.setImageResource(R.drawable.m_abt);
+                        break;
+                    case 4:
                         imgView.setImageResource(R.drawable.m_loc);
                         break;
                 }
@@ -131,13 +134,10 @@ public class HomeInviteActivity extends AppCompatActivity
 //
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
-
-//        BackgroundSoundService.MY_SERVICE
-
-
     }
 
     private void setupTabIcons() {
+
 
         ImageView tabOne = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabOne.setImageResource(R.drawable.m_home_s);
@@ -153,7 +153,11 @@ public class HomeInviteActivity extends AppCompatActivity
 
         ImageView tabFour = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabFour.setImageResource(R.drawable.m_loc);
-        tabLayout.getTabAt(3).setCustomView(tabThree);
+        tabLayout.getTabAt(3).setCustomView(tabFour);
+
+        ImageView tabFive = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabFour.setImageResource(R.drawable.m_loc);
+        tabLayout.getTabAt(4).setCustomView(tabFive);
     }
 
     private boolean isServiceRunning() {
@@ -243,7 +247,7 @@ public class HomeInviteActivity extends AppCompatActivity
         adapter.addFrag(new WedFragment(), "Wedding Details");
         adapter.addFrag(new CoupleFragment(), "Bride & Groom");
         adapter.addFrag(new LocationFragment(), "Location");
-//        adapter.addFrag(new OneFragment(), "FIVE");
+        adapter.addFrag(new LocationFragment(), "FIVE");
 //        adapter.addFrag(new OneFragment(), "SIX");
 //        adapter.addFrag(new OneFragment(), "SEVEN");
 //        adapter.addFrag(new OneFragment(), "EIGHT");
