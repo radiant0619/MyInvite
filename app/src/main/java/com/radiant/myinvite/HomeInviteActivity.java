@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.radiant.myinvite.fragments.CoupleFragment;
 import com.radiant.myinvite.fragments.HomeFragment;
 import com.radiant.myinvite.fragments.LocationFragment;
+import com.radiant.myinvite.fragments.MapFragments;
 import com.radiant.myinvite.fragments.WedFragment;
 import com.radiant.myinvite.service.BackgroundSoundService;
 
@@ -72,7 +73,7 @@ public class HomeInviteActivity extends AppCompatActivity
                         imgView.setImageResource(R.drawable.m_abt_s);
                         break;
                     case 3:
-                        imgView.setImageResource(R.drawable.m_abt_s);
+                        imgView.setImageResource(R.drawable.m_loc_s);
                         break;
                     case 4:
                         imgView.setImageResource(R.drawable.m_loc_s);
@@ -94,7 +95,7 @@ public class HomeInviteActivity extends AppCompatActivity
                         imgView.setImageResource(R.drawable.m_abt);
                         break;
                     case 3:
-                        imgView.setImageResource(R.drawable.m_abt);
+                        imgView.setImageResource(R.drawable.m_loc);
                         break;
                     case 4:
                         imgView.setImageResource(R.drawable.m_loc);
@@ -134,6 +135,9 @@ public class HomeInviteActivity extends AppCompatActivity
 //
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
+
+
+//        https://www.norio.be/android-feature-graphic-generator/
     }
 
     private void setupTabIcons() {
@@ -156,7 +160,7 @@ public class HomeInviteActivity extends AppCompatActivity
         tabLayout.getTabAt(3).setCustomView(tabFour);
 
         ImageView tabFive = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFour.setImageResource(R.drawable.m_loc);
+        tabFive.setImageResource(R.drawable.m_loc);
         tabLayout.getTabAt(4).setCustomView(tabFive);
     }
 
@@ -247,7 +251,7 @@ public class HomeInviteActivity extends AppCompatActivity
         adapter.addFrag(new WedFragment(), "Wedding Details");
         adapter.addFrag(new CoupleFragment(), "Bride & Groom");
         adapter.addFrag(new LocationFragment(), "Location");
-        adapter.addFrag(new LocationFragment(), "FIVE");
+        adapter.addFrag(new MapFragments(), "FIVE");
 //        adapter.addFrag(new OneFragment(), "SIX");
 //        adapter.addFrag(new OneFragment(), "SEVEN");
 //        adapter.addFrag(new OneFragment(), "EIGHT");
