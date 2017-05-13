@@ -138,6 +138,12 @@ public class HomeInviteActivity extends AppCompatActivity
 
 
 //        https://www.norio.be/android-feature-graphic-generator/
+//        pwd: Rsv@A017
+//        Alias: Radiant
+//        pwd: marees96
+//
+//
+
     }
 
     private void setupTabIcons() {
