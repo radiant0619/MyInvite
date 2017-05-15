@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.radiant.myinvite.fragments.OneFragment">
+    tools:context="com.radiant.myinvite.fragments.HomeFragment">
 
     <!--<ImageView-->
     <!--android:id="@+id/imgde"-->
@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="381dp"
+        android:layout_width="382dp"
         android:layout_height="119dp"
         android:text="On Wednesday 28th June 2017 at Sri Kalamega Perumal Temple in Thirumohur, in front of her friends and family, Mareeswari will be marrying Sakthivel."
         android:textAlignment="center"
@@ -33,7 +33,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
+        app:layout_constraintVertical_bias="0.755" />
 
     <!--<LinearLayout-->
     <!--android:layout_width="374dp"-->
@@ -52,34 +52,38 @@
 
     <LinearLayout
         android:id="@+id/line1"
-        android:layout_width="373dp"
+        android:orientation="vertical"
+        android:layout_width="382dp"
         android:layout_height="287dp"
-
-        android:layout_marginBottom="-24dp"
-        android:layout_marginLeft="6dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/detail"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
-        tools:layout_editor_absoluteX="3dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/imgdetail"
             android:layout_width="wrap_content"
             android:layout_height="234dp"
-            android:paddingTop="40dp"
+            android:scaleType="centerInside"
             android:src="@drawable/wedname" />
+        <ImageView
+            android:id="@+id/imgfloral"
+            android:scaleType="fitCenter"
+            android:src="@drawable/heart_flourish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
+
         android:id="@+id/timer"
-        android:layout_width="373dp"
+        android:layout_width="382dp"
         android:layout_height="100dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/wedding_details_header"
+        android:background="@drawable/largefloralbordermd"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -87,6 +91,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -113,6 +118,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -139,6 +145,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -165,6 +172,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
