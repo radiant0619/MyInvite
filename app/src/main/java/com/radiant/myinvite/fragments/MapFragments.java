@@ -5,14 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -24,8 +21,10 @@ import com.radiant.myinvite.R;
 
 public class MapFragments extends Fragment implements OnMapReadyCallback {
 
-    static final LatLng HAMBURG = new LatLng(9.950863, 78.207583);
-    static final LatLng KIEL = new LatLng(9.951539, 78.205786);
+    static final LatLng marriagePlace = new LatLng(9.950863, 78.207583);
+    static final LatLng myHome = new LatLng(9.951476, 78.205874);
+    static final LatLng brideHome = new LatLng(9.429044, 77.806599);
+    static final LatLng recepLoc = new LatLng(9.950533, 78.207555);
     private GoogleMap mMap;
 
 
@@ -56,18 +55,39 @@ public class MapFragments extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        Marker hamburg = mMap.addMarker(new MarkerOptions().position(HAMBURG)
-                .title("Temple"));
-        Marker kiel = mMap.addMarker(new MarkerOptions()
-                .position(KIEL)
-                .title("My House")
-                .snippet("RSV is cool"));
+        Marker hamburg = mMap.addMarker(new MarkerOptions().position(marriagePlace)
+                .title("Sri Kalamegaperumal Temple")
+                .snippet("Marriage Place"));
+
+        Marker markGroomHome = mMap.addMarker(new MarkerOptions()
+                .position(myHome)
+                .title("Prince's Kingdom"));
+
+        Marker markBrideHome = mMap.addMarker(new MarkerOptions()
+                .position(brideHome)
+                .title("Princess's Kingdom"));
+
+        Marker recPlace = mMap.addMarker(new MarkerOptions()
+                .position(recepLoc)
+                .title("Sri Jeeyar Swamigal Marraige Hall")
+                .snippet("Engagement & Reception"));
 
         // Move the camera instantly to hamburg with a zoom of 15.
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HAMBURG, 15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marriagePlace, 25));
 
         // Zoom in, animating the camera.
         mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
-
+//        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        mMap.setMyLocationEnabled(true);
     }
 }

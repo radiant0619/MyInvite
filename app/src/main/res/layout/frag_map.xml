@@ -9,4 +9,41 @@
         class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <!--<LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="https://schemas.android.com/tools"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/show_distance_time"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:textColor="#ff0000"-->
+    <!--android:textColorHighlight="@android:color/primary_text_dark"-->
+    <!--android:textSize="30dp" />-->
+
+    <!--<LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="https://schemas.android.com/tools"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_width="match_parent">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/btnDriving"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:text="Driving Mode" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/btnWalk"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:text="Walking Mode" />-->
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
 </LinearLayout>

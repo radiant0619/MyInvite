@@ -55,6 +55,10 @@ public class HomeFragment extends Fragment {
         tvHour = (TextView) view.findViewById(R.id.txtTimerHour);
         tvMinute = (TextView) view.findViewById(R.id.txtTimerMinute);
         tvSecond = (TextView) view.findViewById(R.id.txtTimerSecond);
+        //tvDay.setTypeface(mFont);
+        //tvHour.setTypeface(mFont);
+        //      tvMinute.setTypeface(mFont);
+//        tvSecond.setTypeface(mFont);
 //        tvEvent = (TextView) view.findViewById(R.id.tvevent);
 
         countDownStart();

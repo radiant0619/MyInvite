@@ -34,8 +34,7 @@ import com.radiant.myinvite.service.BackgroundSoundService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeInviteActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeInviteActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -44,7 +43,8 @@ public class HomeInviteActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_invite);
+//        setContentView(R.layout.activity_home_invite);
+        setContentView(R.layout.app_bar_home_invite);
 
 //        toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -183,25 +183,22 @@ public class HomeInviteActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
+        super.onBackPressed();
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-//        Intent svc = new Intent(this, BackgroundSoundService.class);
-//        startService(svc);
+        Intent svc = new Intent(this, BackgroundSoundService.class);
+        startService(svc);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        stopService(new Intent(this, BackgroundSoundService.class));
+        stopService(new Intent(this, BackgroundSoundService.class));
     }
 
     @Override
@@ -226,30 +223,6 @@ public class HomeInviteActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
