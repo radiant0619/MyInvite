@@ -24,7 +24,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.radiant.myinvite.fragments.ContactFragment;
 import com.radiant.myinvite.fragments.CoupleFragment;
+import com.radiant.myinvite.fragments.GiftFragment;
 import com.radiant.myinvite.fragments.HomeFragment;
 import com.radiant.myinvite.fragments.LocationFragment;
 import com.radiant.myinvite.fragments.MapFragments;
@@ -78,6 +80,12 @@ public class HomeInviteActivity extends AppCompatActivity {
                     case 4:
                         imgView.setImageResource(R.drawable.m_loc_s);
                         break;
+                    case 5:
+                        imgView.setImageResource(R.drawable.m_gift_s);
+                        break;
+                    case 6:
+                        imgView.setImageResource(R.drawable.m_con_s);
+                        break;
                 }
             }
 
@@ -99,6 +107,12 @@ public class HomeInviteActivity extends AppCompatActivity {
                         break;
                     case 4:
                         imgView.setImageResource(R.drawable.m_loc);
+                        break;
+                    case 5:
+                        imgView.setImageResource(R.drawable.m_gift);
+                        break;
+                    case 6:
+                        imgView.setImageResource(R.drawable.m_con);
                         break;
                 }
             }
@@ -126,24 +140,7 @@ public class HomeInviteActivity extends AppCompatActivity {
                 }
             }
         });
-//        fab.setVisibility(View.INVISIBLE);
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.setDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-
-
-//        https://www.norio.be/android-feature-graphic-generator/
-//        pwd: Rsv@A017
-//        Alias: Radiant
-//        pwd: marees96
-//
-//
-
+//      test  pwd: Rsv@A017 Alias: Radiant pwd: marees96
     }
 
     private void setupTabIcons() {
@@ -168,6 +165,14 @@ public class HomeInviteActivity extends AppCompatActivity {
         ImageView tabFive = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabFive.setImageResource(R.drawable.m_loc);
         tabLayout.getTabAt(4).setCustomView(tabFive);
+
+        ImageView tabSix = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabFive.setImageResource(R.drawable.m_gift);
+        tabLayout.getTabAt(5).setCustomView(tabSix);
+
+        ImageView tabSeven = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabFive.setImageResource(R.drawable.m_con);
+        tabLayout.getTabAt(6).setCustomView(tabSeven);
     }
 
     private boolean isServiceRunning() {
@@ -230,9 +235,9 @@ public class HomeInviteActivity extends AppCompatActivity {
         adapter.addFrag(new WedFragment(), "Wedding Details");
         adapter.addFrag(new CoupleFragment(), "Bride & Groom");
         adapter.addFrag(new LocationFragment(), "Location");
-        adapter.addFrag(new MapFragments(), "FIVE");
-//        adapter.addFrag(new OneFragment(), "SIX");
-//        adapter.addFrag(new OneFragment(), "SEVEN");
+        adapter.addFrag(new MapFragments(), "Map");
+        adapter.addFrag(new GiftFragment(), "Gift");
+        adapter.addFrag(new ContactFragment(), "Contact");
 //        adapter.addFrag(new OneFragment(), "EIGHT");
 //        adapter.addFrag(new OneFragment(), "NINE");
 //        adapter.addFrag(new OneFragment(), "TEN");

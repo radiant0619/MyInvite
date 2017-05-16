@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public class LocationFragment extends Fragment {
 ////        Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/myfonts.otf");
 //        MyTextView.setTypeface(mFont);
 
-        long callId = 3;
+        long callId = 1;
         long startMillSec = 0;
         long endMillSec = 0;
         Calendar beginTime = Calendar.getInstance();
@@ -65,7 +66,8 @@ public class LocationFragment extends Fragment {
         values.put(CalendarContract.Events.TITLE, "Task Details");
         values.put(CalendarContract.Events.DESCRIPTION, "Task Description");
         values.put(CalendarContract.Events.CALENDAR_ID, callId);
-        values.put(CalendarContract.Events.EVENT_TIMEZONE, "India/Kolkatta");
+        values.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance()
+                .getTimeZone().getID());
 
 //        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
 //            // TODO: Consider calling
@@ -81,9 +83,36 @@ public class LocationFragment extends Fragment {
         if (Utilities.checkPermission(getActivity(), Manifest.permission.WRITE_CALENDAR,
                 "Apps need to access Calendar", 0)) {
             Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+            Long evenit;
+            evenit = Long.parseLong(uri.getLastPathSegment());
+            setReminder(cr, evenit, 1440);
+            setReminder(cr, evenit, 60);
+            setReminder(cr, evenit, 7200);
         }
 
         return view;
+    }
+
+    public void setReminder(ContentResolver cr, long eventID, int timeBefore) {
+        try {
+            ContentValues values = new ContentValues();
+            values.put(CalendarContract.Reminders.MINUTES, timeBefore);
+            values.put(CalendarContract.Reminders.EVENT_ID, eventID);
+            values.put(CalendarContract.Reminders.METHOD, CalendarContract.Reminders.METHOD_ALERT);
+            if (Utilities.checkPermission(getActivity(), Manifest.permission.WRITE_CALENDAR,
+                    "Apps need to access Calendar", 0)) {
+                Uri uri = cr.insert(CalendarContract.Reminders.CONTENT_URI, values);
+                Cursor c = CalendarContract.Reminders.query(cr, eventID,
+                        new String[]{CalendarContract.Reminders.MINUTES});
+                if (c.moveToFirst()) {
+                    System.out.println("calendar"
+                            + c.getInt(c.getColumnIndex(CalendarContract.Reminders.MINUTES)));
+                }
+                c.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
