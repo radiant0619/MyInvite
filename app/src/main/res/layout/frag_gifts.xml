@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="For Us From You.."
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="Your presence and precious Blessings."
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_dark" />
+    <!--“Autumn is a second spring when every leaf is a flower.” -->
+    <!--Keep a green tree in your heart and perhaps a singing bird will come -->
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="For You From Us.."
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="At one step towards save the environment, we present a gift to you. Yah , it is a Tree plant.   "
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <ExpandableListView
+        android:id="@+id/listexpands"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+
 
 </LinearLayout>

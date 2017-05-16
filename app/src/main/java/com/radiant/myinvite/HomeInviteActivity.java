@@ -167,11 +167,11 @@ public class HomeInviteActivity extends AppCompatActivity {
         tabLayout.getTabAt(4).setCustomView(tabFive);
 
         ImageView tabSix = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFive.setImageResource(R.drawable.m_gift);
+        tabSix.setImageResource(R.drawable.m_gift);
         tabLayout.getTabAt(5).setCustomView(tabSix);
 
         ImageView tabSeven = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFive.setImageResource(R.drawable.m_con);
+        tabSeven.setImageResource(R.drawable.m_con);
         tabLayout.getTabAt(6).setCustomView(tabSeven);
     }
 
