@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
         android:paddingTop="10dp"
         android:text="For Us From You.."
         android:textColor="@color/colorPrimary" />
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
+        android:paddingLeft="15dp"
         android:text="For You From Us.."
         android:textColor="@color/colorPrimary" />
 
@@ -41,7 +43,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        android:text="At one step towards save the environment, we present a gift to you. Yah , it is a Tree plant.   "
+        android:text="Keep a green tree in your heart and perhaps a singing bird will come."
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
