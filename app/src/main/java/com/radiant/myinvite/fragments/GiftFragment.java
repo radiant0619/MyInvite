@@ -65,7 +65,7 @@ public class GiftFragment extends Fragment {
         txtVwUs.setTypeface(mFont2);
 
         txtVwYou = (TextView) view.findViewById(R.id.txt3);
-        txtVwYou.setTypeface(mFont3);
+        txtVwYou.setTypeface(mFont2);
 
 
         expandableListView = (ExpandableListView) view.findViewById(R.id.listexpands);

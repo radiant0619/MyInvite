@@ -30,8 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
         android:text="For You From Us.."
         android:textColor="@color/colorPrimary" />
 
@@ -45,8 +45,8 @@
         android:paddingTop="10dp"
         android:text="Keep a green tree in your heart and perhaps a singing bird will come."
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:textColor="@android:color/holo_green_dark" />
 
     <ExpandableListView
         android:id="@+id/listexpands"
