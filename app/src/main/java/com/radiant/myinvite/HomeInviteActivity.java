@@ -82,7 +82,7 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(5);
         setupViewPager(viewPager);
-        viewPager.setPageTransformer(false,new ViewPager.PageTransformer() {
+        viewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
             @Override
             public void transformPage(View page, float position) {
                 page.setRotationY(position * -30);
@@ -226,8 +226,8 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
         }
         return false;
     }
-    private boolean isFirstTime()
-    {
+
+    private boolean isFirstTime() {
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         boolean ranBefore = preferences.getBoolean("RanBefore", false);
         if (!ranBefore) {
@@ -238,6 +238,7 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
         }
         return !ranBefore;
     }
+
     @Override
     public void onBackPressed() {
 
@@ -264,7 +265,7 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_invite, menu);
+//        getMenuInflater().inflate(R.menu.home_invite, menu);
         return true;
     }
 

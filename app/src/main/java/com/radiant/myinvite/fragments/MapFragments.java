@@ -73,7 +73,7 @@ public class MapFragments extends Fragment implements OnMapReadyCallback {
                 .snippet("Engagement & Reception"));
 
         // Move the camera instantly to hamburg with a zoom of 15.
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marriagePlace, 25));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marriagePlace, 75));
 
         // Zoom in, animating the camera.
         mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
