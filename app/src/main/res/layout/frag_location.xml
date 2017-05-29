@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mySwitch="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/placeevent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        mySwitch:layout_constraintBottom_toBottomOf="parent"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:scaleType="fitXY"
-        android:src="@drawable/placeofevent" />
-</LinearLayout>
+        android:src="@drawable/placeofevent"
+        android:visibility="visible" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        mySwitch:layout_constraintBottom_toBottomOf="parent"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.radiant.myinvite.widgets.MySwitch
+        android:id="@+id/pickup2"
+        style="@style/mySwitchStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="33dp"
+        android:gravity="center"
+        mySwitch:backgroundMask="@drawable/rgroove_mask"
+        mySwitch:layout_constraintHorizontal_bias="0.059"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent"
+        mySwitch:leftBackground="@drawable/green_drawable"
+        mySwitch:rightBackground="@drawable/red_drawable"
+        mySwitch:textOff="We"
+        mySwitch:textOn="You"
+        mySwitch:textOnThumb="false"
+        mySwitch:thumb="@drawable/rswitch_button_small"
+        mySwitch:thumbExtraMovement="19dp"
+        mySwitch:track="@drawable/rgroove_copy" />
+</android.support.constraint.ConstraintLayout>

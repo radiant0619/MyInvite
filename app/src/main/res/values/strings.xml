@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">MyInvite</string>
+    <string name="app_name">We Invites U</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <drawable name="red_drawable">@color/apple</drawable>
+    <drawable name="green_drawable">@color/colorAccent</drawable>
 </resources>

@@ -14,10 +14,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.radiant.myinvite.R;
 import com.radiant.myinvite.utils.Utilities;
+import com.radiant.myinvite.widgets.MySwitch;
 
 import java.util.Calendar;
 
@@ -25,9 +36,19 @@ import java.util.Calendar;
  * Created by rsvra on 08/05/2017.
  */
 
-public class LocationFragment extends Fragment {
+public class LocationFragment extends Fragment implements OnMapReadyCallback {
 
     private TextView MyTextView;
+    private MySwitch mySwitch;
+    private LinearLayout line1;
+    private ImageView imgLoc;
+
+    static final LatLng marriagePlace = new LatLng(9.950863, 78.207583);
+    static final LatLng myHome = new LatLng(9.951476, 78.205874);
+    static final LatLng brideHome = new LatLng(9.429044, 77.806599);
+    static final LatLng recepLoc = new LatLng(9.950533, 78.207555);
+    private GoogleMap mMap;
+
 
     public LocationFragment() {
         // Required empty public constructor
@@ -44,7 +65,67 @@ public class LocationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.frag_location, container, false);
+        line1 = (LinearLayout) view.findViewById(R.id.mapline);
+        imgLoc = (ImageView) view.findViewById(R.id.placeevent);
+        mySwitch = (MySwitch) view.findViewById(R.id.pickup2);
+        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    line1.setVisibility(View.VISIBLE);
+                    imgLoc.setVisibility(View.GONE);
+                } else {
+                    line1.setVisibility(View.GONE);
+                    imgLoc.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        if (mMap == null) {
+            SupportMapFragment mapFrag = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+            mapFrag.getMapAsync(this);
+        }
         return view;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        Marker hamburg = mMap.addMarker(new MarkerOptions().position(marriagePlace)
+                .title("Sri Kalamegaperumal Temple")
+                .snippet("Marriage Place"));
+
+        Marker markGroomHome = mMap.addMarker(new MarkerOptions()
+                .position(myHome)
+                .title("Prince's Kingdom"));
+
+        Marker markBrideHome = mMap.addMarker(new MarkerOptions()
+                .position(brideHome)
+                .title("Princess's Kingdom"));
+
+        Marker recPlace = mMap.addMarker(new MarkerOptions()
+                .position(recepLoc)
+                .title("Sri Jeeyar Swamigal Marraige Hall")
+                .snippet("Engagement & Reception"));
+
+        // Move the camera instantly to hamburg with a zoom of 15.
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marriagePlace, 75));
+
+        // Zoom in, animating the camera.
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+//        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        mMap.setMyLocationEnabled(true);
     }
 
 }

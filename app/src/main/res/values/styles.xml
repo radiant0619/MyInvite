@@ -35,6 +35,7 @@
         <item name="sv_titleTextAppearance">@style/CustomTitle2</item>
         <item name="sv_detailTextAppearance">@style/CustomText2</item>
     </style>
+
     <style name="CustomTitle2" parent="TextAppearance.ShowcaseView.Title.Light">
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
@@ -43,4 +44,28 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <style name="mySwitchStyle">
+        <item name="track">@drawable/switch_track_green</item>
+        <item name="thumb">@drawable/background_fenced</item>
+        <item name="switchTextAppearanceAttrib">@style/mySwitchTextAppearance</item>
+        <item name="textOn">ON</item>
+        <item name="textOff">OFF</item>
+        <item name="pushStyle">false</item>
+        <item name="textOnThumb">true</item>
+        <item name="thumbExtraMovement">0dp</item>
+        <item name="thumbTextPadding">6dp</item>
+        <item name="trackTextPadding">6dp</item>
+        <item name="switchMinWidth">69dp</item>
+        <item name="switchMinHeight">36dp</item>
+        <item name="switchPadding">6dp</item>
+    </style>
+
+    <style name="mySwitchTextAppearance">
+        <item name="textColor">@color/colorPrimary</item>
+        <item name="textColorHighlight">@color/colorPrimary</item>
+        <item name="textColorHint">@color/colorPrimary</item>
+        <item name="textColorLink">@color/colorPrimary</item>
+        <item name="textSize">16sp</item>
+        <item name="textStyle">normal</item>
+    </style>
 </resources>

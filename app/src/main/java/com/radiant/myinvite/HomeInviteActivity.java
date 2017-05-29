@@ -112,14 +112,14 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
                         imgView.setImageResource(R.drawable.m_loc_s);
                         break;
                     case 4:
-                        imgView.setImageResource(R.drawable.m_loc_s);
-                        break;
-                    case 5:
                         imgView.setImageResource(R.drawable.m_gift_s);
                         break;
-                    case 6:
+                    case 5:
                         imgView.setImageResource(R.drawable.m_con_s);
                         break;
+//                    case 6:
+//                        imgView.setImageResource(R.drawable.m_con_s);
+//                        break;
                 }
             }
 
@@ -140,14 +140,14 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
                         imgView.setImageResource(R.drawable.m_loc);
                         break;
                     case 4:
-                        imgView.setImageResource(R.drawable.m_loc);
-                        break;
-                    case 5:
                         imgView.setImageResource(R.drawable.m_gift);
                         break;
-                    case 6:
+                    case 5:
                         imgView.setImageResource(R.drawable.m_con);
                         break;
+//                    case 6:
+//                        imgView.setImageResource(R.drawable.m_con);
+//                        break;
                 }
             }
 
@@ -204,16 +204,16 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
         tabLayout.getTabAt(3).setCustomView(tabFour);
 
         ImageView tabFive = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFive.setImageResource(R.drawable.m_loc);
+        tabFive.setImageResource(R.drawable.m_gift);
         tabLayout.getTabAt(4).setCustomView(tabFive);
 
         ImageView tabSix = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabSix.setImageResource(R.drawable.m_gift);
+        tabSix.setImageResource(R.drawable.m_con);
         tabLayout.getTabAt(5).setCustomView(tabSix);
 
-        ImageView tabSeven = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabSeven.setImageResource(R.drawable.m_con);
-        tabLayout.getTabAt(6).setCustomView(tabSeven);
+//        ImageView tabSeven = (ImageView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+//        tabSeven.setImageResource(R.drawable.m_con);
+//        tabLayout.getTabAt(6).setCustomView(tabSeven);
     }
 
     private boolean isServiceRunning() {
@@ -291,7 +291,7 @@ public class HomeInviteActivity extends AppCompatActivity implements ActivityCom
         adapter.addFrag(new WedFragment(), "Wedding Details");
         adapter.addFrag(new CoupleFragment(), "Bride & Groom");
         adapter.addFrag(new LocationFragment(), "Location");
-        adapter.addFrag(new MapFragments(), "Map");
+//        adapter.addFrag(new MapFragments(), "Map");
         adapter.addFrag(new GiftFragment(), "Gift");
         adapter.addFrag(new ContactFragment(), "Contact");
 //        adapter.addFrag(new OneFragment(), "EIGHT");
