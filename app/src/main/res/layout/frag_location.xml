@@ -10,33 +10,33 @@
         android:id="@+id/placeevent"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        mySwitch:layout_constraintBottom_toBottomOf="parent"
-        mySwitch:layout_constraintLeft_toLeftOf="parent"
-        mySwitch:layout_constraintRight_toRightOf="parent"
-        mySwitch:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="fitXY"
         android:src="@drawable/placeofevent"
-        android:visibility="visible" />
+        android:visibility="gone"
+        mySwitch:layout_constraintBottom_toBottomOf="parent"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/mapline"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        mySwitch:layout_constraintBottom_toBottomOf="parent"
-        mySwitch:layout_constraintLeft_toLeftOf="parent"
-        mySwitch:layout_constraintRight_toRightOf="parent"
-        mySwitch:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        mySwitch:layout_constraintBottom_toBottomOf="parent"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent">
 
         <fragment
             android:id="@+id/map"
@@ -45,25 +45,79 @@
             android:layout_height="match_parent" />
     </LinearLayout>
 
-    <com.radiant.myinvite.widgets.MySwitch
-        android:id="@+id/pickup2"
-        style="@style/mySwitchStyle"
-        android:layout_width="wrap_content"
+    <!--<com.radiant.myinvite.widgets.MySwitch-->
+        <!--android:id="@+id/pickup2"-->
+        <!--style="@style/mySwitchStyle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="33dp"-->
+        <!--android:gravity="center"-->
+        <!--android:visibility="gone"-->
+        <!--mySwitch:backgroundMask="@drawable/rgroove_mask"-->
+        <!--mySwitch:layout_constraintHorizontal_bias="0.059"-->
+        <!--mySwitch:layout_constraintLeft_toLeftOf="parent"-->
+        <!--mySwitch:layout_constraintRight_toRightOf="parent"-->
+        <!--mySwitch:layout_constraintTop_toTopOf="parent"-->
+        <!--mySwitch:leftBackground="@drawable/green_drawable"-->
+        <!--mySwitch:rightBackground="@drawable/red_drawable"-->
+        <!--mySwitch:textOff="We"-->
+        <!--mySwitch:textOn="You"-->
+        <!--mySwitch:textOnThumb="false"-->
+        <!--mySwitch:thumb="@drawable/rswitch_button_small"-->
+        <!--mySwitch:thumbExtraMovement="19dp"-->
+        <!--mySwitch:track="@drawable/rgroove_copy" />-->
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="33dp"
-        android:gravity="center"
-        mySwitch:backgroundMask="@drawable/rgroove_mask"
-        mySwitch:layout_constraintHorizontal_bias="0.059"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal"
+        mySwitch:layout_constraintLeft_toLeftOf="parent"
+        mySwitch:layout_constraintRight_toRightOf="parent"
+        mySwitch:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rdoBus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:checked="true"
+            android:text="U by Bus" />
+
+        <RadioButton
+            android:id="@+id/rdoCar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="U by Car/Bike" />
+
+        <RadioButton
+            android:id="@+id/rdoWe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="We" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:background="@drawable/line_backgradiant"
+        android:id="@+id/busline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        mySwitch:layout_constraintBottom_toBottomOf="parent"
+        mySwitch:layout_constraintHorizontal_bias="0.0"
         mySwitch:layout_constraintLeft_toLeftOf="parent"
         mySwitch:layout_constraintRight_toRightOf="parent"
         mySwitch:layout_constraintTop_toTopOf="parent"
-        mySwitch:leftBackground="@drawable/green_drawable"
-        mySwitch:rightBackground="@drawable/red_drawable"
-        mySwitch:textOff="We"
-        mySwitch:textOn="You"
-        mySwitch:textOnThumb="false"
-        mySwitch:thumb="@drawable/rswitch_button_small"
-        mySwitch:thumbExtraMovement="19dp"
-        mySwitch:track="@drawable/rgroove_copy" />
+        mySwitch:layout_constraintVertical_bias="0.0"></LinearLayout>
 </android.support.constraint.ConstraintLayout>

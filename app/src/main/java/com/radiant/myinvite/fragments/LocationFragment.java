@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -38,9 +39,10 @@ import java.util.Calendar;
 
 public class LocationFragment extends Fragment implements OnMapReadyCallback {
 
-    private TextView MyTextView;
+
     private MySwitch mySwitch;
     private LinearLayout line1;
+    private LinearLayout linebus;
     private ImageView imgLoc;
 
     static final LatLng marriagePlace = new LatLng(9.950863, 78.207583);
@@ -66,8 +68,11 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.frag_location, container, false);
         line1 = (LinearLayout) view.findViewById(R.id.mapline);
+        linebus = (LinearLayout) view.findViewById(R.id.busline);
         imgLoc = (ImageView) view.findViewById(R.id.placeevent);
         mySwitch = (MySwitch) view.findViewById(R.id.pickup2);
+
+        mySwitch.setVisibility(View.GONE);
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -85,6 +90,31 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
             SupportMapFragment mapFrag = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             mapFrag.getMapAsync(this);
         }
+
+        RadioGroup rg = (RadioGroup) view.findViewById(R.id.radio_group);
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rdoBus:
+                        linebus.setVisibility(View.VISIBLE);
+                        line1.setVisibility(View.GONE);
+                        imgLoc.setVisibility(View.GONE);
+                        break;
+                    case R.id.rdoCar:
+                        linebus.setVisibility(View.GONE);
+                        line1.setVisibility(View.VISIBLE);
+                        imgLoc.setVisibility(View.GONE);
+                        break;
+                    case R.id.rdoWe:
+                        linebus.setVisibility(View.GONE);
+                        line1.setVisibility(View.GONE);
+                        imgLoc.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+        });
+
         return view;
     }
 
